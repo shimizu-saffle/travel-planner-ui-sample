@@ -46,12 +46,14 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.transparent,
       shadowColor: Colors.transparent,
-      leading: const IconButton(
-        icon: Icon(
+      leading: IconButton(
+        icon: const Icon(
           Icons.home,
           color: kIconColor,
         ),
-        onPressed: null,
+        onPressed: () {
+          // TODO(shimizu-saffle): 旅行計画一覧ページに戻る
+        },
       ),
       actions: [
         IconButton(
