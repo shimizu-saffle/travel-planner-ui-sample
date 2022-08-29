@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:travel_planner_ui_sample/utils/build_context.dart';
 import 'package:travel_planner_ui_sample/utils/constants.dart';
 
 class TripPlanPage extends HookConsumerWidget {
@@ -27,7 +28,12 @@ class _Body extends StatelessWidget {
         // TODO(shimizu-saffle): カメラロールからピックしたイメージを表示する
         // 旅行のイメージをカルーセルで表示する。ユーザーは行きたい場所、やりたいこと、食べたい物の画像をアップして、
         // 旅行計画のイマジネーションにする。
-        Image.asset('assets/images/kiyomizudera.png'),
+        Image.asset(
+          'assets/images/kiyomizudera.png',
+          height: context.displaySize.height * 0.333,
+          width: context.displaySize.width,
+          fit: BoxFit.cover,
+        ),
       ],
     );
   }
@@ -47,6 +53,8 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       shadowColor: Colors.transparent,
       leading: IconButton(
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
         icon: const Icon(
           Icons.home,
           color: kIconColor,
@@ -57,6 +65,8 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
           icon: const Icon(
             Icons.photo_size_select_actual,
             color: kIconColor,
