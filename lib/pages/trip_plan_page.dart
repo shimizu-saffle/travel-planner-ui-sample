@@ -40,13 +40,22 @@ class _Body extends StatelessWidget {
             ),
           ],
         ),
+        // TODO(shimizu-saffle): 最小サイズを指定して、旅行タイトルに応じてサイズを可変にする
         Positioned(
           bottom: context.displaySize.height * 0.6,
           child: Container(
-            height: context.displaySize.height * 0.2,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24,
+              vertical: 16,
+            ),
+            height: context.displaySize.height * 0.16,
             width: context.displaySize.width * 0.88,
             decoration: BoxDecoration(
               color: Colors.white,
+              border: Border.all(
+                color: Colors.black12,
+                width: 1,
+              ),
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
@@ -56,6 +65,16 @@ class _Body extends StatelessWidget {
                   offset: const Offset(0, 5),
                 ),
               ],
+            ),
+            child: TextField(
+              style: context.headlineSmall,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: '旅行のタイトル',
+                hintStyle: context.headlineSmall!.copyWith(
+                  color: Colors.black.withOpacity(0.5),
+                ),
+              ),
             ),
           ),
         ),
