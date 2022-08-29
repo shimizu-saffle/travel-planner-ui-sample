@@ -23,16 +23,41 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
+      alignment: Alignment.center,
       children: [
-        // TODO(shimizu-saffle): カメラロールからピックしたイメージを表示する
-        // 旅行のイメージをカルーセルで表示する。ユーザーは行きたい場所、やりたいこと、食べたい物の画像をアップして、
-        // 旅行計画のイマジネーションにする。
-        Image.asset(
-          'assets/images/kiyomizudera.png',
-          height: context.displaySize.height * 0.333,
-          width: context.displaySize.width,
-          fit: BoxFit.cover,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // TODO(shimizu-saffle): カメラロールからピックしたイメージを表示する
+            // 旅行のイメージをカルーセルで表示する。ユーザーは行きたい場所、やりたいこと、食べたい物の画像をアップして、
+            // 旅行計画のイマジネーションにする。
+            Image.asset(
+              'assets/images/kiyomizudera.png',
+              height: context.displaySize.height * 0.333,
+              width: context.displaySize.width,
+              fit: BoxFit.cover,
+            ),
+          ],
+        ),
+        Positioned(
+          bottom: context.displaySize.height * 0.6,
+          child: Container(
+            height: context.displaySize.height * 0.2,
+            width: context.displaySize.width * 0.88,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 10,
+                  spreadRadius: 5,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+          ),
         ),
       ],
     );
