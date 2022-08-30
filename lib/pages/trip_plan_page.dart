@@ -67,12 +67,15 @@ class _Body extends StatelessWidget {
               ],
             ),
             child: TextField(
-              style: context.headlineSmall,
+              style: context.headlineSmall!.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: '旅行のタイトル',
                 hintStyle: context.headlineSmall!.copyWith(
                   color: Colors.black.withOpacity(0.5),
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
